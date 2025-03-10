@@ -1,0 +1,251 @@
+/*Le container principal avec le tableau des prospects*/
+.Prospects-container {
+    text-align: center;                                                 /*La propriété qui définit l'alignement horizontal d'un élément/du texte dans un contaneur div*/
+    margin: 20px auto;                                                  /*définit la taille des marges sur les quatre côtés de l'élément*/
+    max-width: 90%;                                                     /*largeur max d'un élément */
+    background: linear-gradient( rgb(117,91,169), rgb(63,36,123));  /*Les notions rgb pour le gradient de l'arriere-plan*/
+    padding: 20px;                                                       /*définir les différents écarts de remplissage sur les quatre côtés d'un élément*/
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: auto;                                                    /*définit comment gérer le dépassement du contenu d'un élément dans son bloc*/
+  }
+
+  h3{
+    color:#794EA0;
+  }
+  
+  /*Table des prospects*/
+  .Prospects-table {
+    width: 100%;
+    min-width: 800px;
+    border-collapse: collapse;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    table-layout: auto;
+    
+  }
+  
+  /* Les titres du table*/
+  .Prospects-table th {
+    background: linear-gradient( #4E50A2, #54519F);
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  
+  /*Les lignes du tables*/
+  .Prospects-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+    white-space: nowrap;
+  }
+  /*Tous les boutons du table*/
+  .Prospects-table button{
+    border-radius: 10px;
+    font-size: 19px;
+  }
+  /*Le bouton Modifier des prospects*/
+  .Modifier{
+    background: linear-gradient(#2d20a0, #378cbe);
+    color:#ffffff;
+  }
+  /*Le bouton Supprimer des prospects*/
+  .Supprimer{
+    background: linear-gradient(#c20245, #970a0a);
+    color:#ffffff;
+  }
+  /*Le bouton pour afficher ou ajouter les commentaires des prospects*/
+  .AfficherComments{
+    background: linear-gradient(#e89f02, #e85e02);
+  }
+  
+  /*  Lignes alternées */
+  .Prospects-table tr:nth-child(even) {
+    
+  }
+  
+  /*  Animation de survol */
+  .Prospects-table tr:hover {
+    background-color: #3F247B;
+    transition: 0.3s;
+  }
+  
+  /*  Les boutons du forme de modification des prospects */
+  .edit-btn, .delete-btn {
+    padding: 8px 12px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: 0.3s;
+  }
+ 
+  /*  Les filtres des prospects */
+  .search-input, select {
+    margin: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+  
+  .search-input {
+    width: 200px;
+  }
+
+  /*Une forme d'edition des prospects/input/les boutons*/
+  .edit-form {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+  }
+  
+  .edit-form input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size:16px;
+  }
+  
+  .edit-form.save-btn {
+    background-color: #ffffff;
+    width:100%;
+    color: #4CAF50;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+  
+  .edit-form .cancel-btn {
+    background-color: #ffffff;
+    color: #E74C3C;
+    padding: 8px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .save-btn:hover {
+    background-color: #45A049;
+    color: #ffffff;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #C0392B;
+    color: #ffffff;
+  }
+
+  /*Le bouton pour ouvrir une fenetre pour creer un prospect*/
+  .add-btn {
+    background: linear-gradient(#4fa0f7, #046dde);
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 15px;
+  }
+  
+  .add-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* L'arriere - plan de la fenetre modale */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* Au-dessus de tout */
+  }
+
+  .modal-overlay input{
+    padding: 9px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  /* La fenetre modale */
+  .modal-content {
+    background: white;
+    color: #3F247B;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  .modal-content.edit-form{
+    display: flex;
+    flex-direction: center;
+    align-items: center;
+    margin: 0 auto;
+  }
+  
+  /* Le bouton de fermeture */
+  .modal-content .cancel-btn {
+    top: 10px;
+    right: 10px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  /* Animation de l'apparence */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .comments-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centralisation horizontale des elements */
+    justify-content: center;  /* Centralisation verticale */
+    padding: 15px;
+  }
+  .comments-form button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin:15px;
+  background: linear-gradient( rgb(117,91,169), rgb(63,36,123));
+  color: white;
+  }
+  .comments-form input{
+    width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  }
+
+
+  
