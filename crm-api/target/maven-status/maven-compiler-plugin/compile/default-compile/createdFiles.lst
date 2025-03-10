@@ -1,0 +1,8 @@
+com\example\crmapi\models\Comment.class
+com\example\crmapi\models\Prospect.class
+com\example\crmapi\repositories\CommentRepository.class
+com\example\crmapi\controllers\CommentController.class
+com\example\crmapi\repositories\ProspectRepository.class
+com\example\crmapi\controllers\ProspectController.class
+com\example\crmapi\services\CommentService.class
+com\example\crmapi\CrmApiApplication.class
