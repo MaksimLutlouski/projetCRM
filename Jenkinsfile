@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git 'https://github.com/MaksimLutlouski/projetCRM'
+                git branch: 'main', url: 'https://github.com/MaksimLutlouski/projetCRM.git'
             }
         }
         stage('Build API') {
