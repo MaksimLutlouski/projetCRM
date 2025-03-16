@@ -13,6 +13,20 @@ pipeline {
                 }
             }
         }
+        stage('Check JAR File') {
+            steps {
+                script {
+                    sh 'ls -lh backend/target/'
+                }
+            }
+        }
+        stage('Build Frontend') {
+            steps {
+                script {
+                    sh 'cd frontend && npm install && npm run build'
+                }
+            }
+        }
         stage('Docker Compose Up') {
             steps {
                 script {
@@ -22,4 +36,3 @@ pipeline {
         }
     }
 }
-
