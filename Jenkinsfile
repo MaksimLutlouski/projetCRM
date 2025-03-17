@@ -8,8 +8,8 @@ pipeline {
         }
         stage('Build API') {
             steps {
-                script {
-                    sh 'cd crm-api && mvn clean package -DskipTests'
+                dir('crm-api') {
+                    sh 'mvn clean package -DskipTests'
                 }
             }
         }
