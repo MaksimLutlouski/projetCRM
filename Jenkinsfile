@@ -9,7 +9,7 @@ pipeline {
         stage('Build API') {
             steps {
                 script {
-                    sh 'cd backend && mvn clean package -DskipTests'
+                    sh 'cd crm-api && mvn clean package -DskipTests'
                 }
             }
         }
