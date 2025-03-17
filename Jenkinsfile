@@ -16,14 +16,14 @@ pipeline {
         stage('Check JAR File') {
             steps {
                 script {
-                    sh 'ls -lh backend/target/'
+                    sh 'ls -lh crm-api/target/'
                 }
             }
         }
         stage('Build Frontend') {
             steps {
                 script {
-                    sh 'cd frontend && npm install && npm run build'
+                    sh 'npm install && npm run build'
                 }
             }
         }
