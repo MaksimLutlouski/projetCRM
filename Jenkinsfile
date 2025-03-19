@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Cleanup') {
+              steps {
+                   sh 'rm -rf crm-api/target || true'
+            }
+       }
         stage('Checkout') {
             steps {
                 git branch: 'main', url: 'https://github.com/MaksimLutlouski/projetCRM.git'
